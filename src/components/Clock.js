@@ -4,27 +4,23 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = { date: props.time };
-    console.log("constructor");
   }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-  }
+  //   componentDidUpdate() {
+  //     console.log("componentDidUpdate");
+  //   }
 
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate");
-    return true;
-  }
-
+  //   shouldComponentUpdate() {
+  //     console.log("shouldComponentUpdate");
+  //     return true;
+  //   }
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 2000);
-    console.log("componentDidMount");
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
-    clearInterval(this.timerID);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.timerID);
+  // }
 
   tick() {
     this.setState({
@@ -33,7 +29,6 @@ class Clock extends Component {
   }
 
   render() {
-    console.log("render");
     const { zone, timeZone, nation } = this.props;
     return (
       <div>
